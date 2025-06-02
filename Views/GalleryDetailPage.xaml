@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="OmniArt.Views.GalleryDetailPage"
+             Title="Gallery Details"
+             x:Name="GalleryDetails">
+    
+    <ScrollView Padding="20">
+        <VerticalStackLayout Spacing="10">
+            
+            <!-- Gallery Info -->
+            <Label Text="{Binding Title}" FontSize="24" FontAttributes="Bold"/>
+            <Label Text="{Binding Description}" FontSize="16"/>
+
+            <Label Text="Date:" FontAttributes="Bold"/>
+            <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}"/>
+
+            <Label Text="Start Time:" FontAttributes="Bold"/>
+            <Label Text="{Binding StartTime, StringFormat='{0:hh\\:mm}'}"/>
+            
+            <Label Text="End Time:" FontAttributes="Bold"/>
+            <Label Text="{Binding EndTime, StringFormat='{0:hh\\:mm}'}"/>
+
+            <Label Text="Host Name:" FontAttributes="Bold"/>
+            <Label Text="{Binding HostFullName}"/>
+
+            <!-- Upload Art Button -->
+            <Button Text="Upload Art"
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,0"
+                    IsVisible="{Binding IsUpcoming}"
+                    Command="{Binding UploadArtCommand}"/>
+            
+            <!-- Delete Art Button -->
+            <Button Text="Delete Art" 
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,0"
+                    IsVisible="{Binding IsUpcoming}"
+                    Command="{Binding DeleteArtCommand}"/>
+
+            <!-- Edit Art Button -->
+            <Button Text="Edit Art" 
+                    HorizontalOptions="Center"
+                    Margin="0,20,0,0"
+                    IsVisible="{Binding IsUpcoming}"
+                    Command="{Binding EditArtCommand}"/>
+            
+            <!-- Art Gallery Grid -->
+            <CollectionView ItemsSource="{Binding ArtPieces}"
+                            IsVisible="{Binding ShowArt}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" 
+                                     Span="2"
+                                     VerticalItemSpacing="10"
+                                     HorizontalItemSpacing="10"/>
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border Stroke="LightGrey" 
+                                    StrokeThickness="1" 
+                                    Padding="20" 
+                                    Margin="5"
+                                    WidthRequest="400">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="10"/>
+                            </Border.StrokeShape>
+                            <HorizontalStackLayout>
+                                <Image Source="{Binding ImagePath}"
+                                       HeightRequest="120"
+                                       WidthRequest="120"
+                                       Aspect="AspectFill">
+
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding Source={x:Reference GalleryDetails}, Path=BindingContext.ImageTappedCommand}"
+                                                              CommandParameter="{Binding .}"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
+
+                                <StackLayout>
+                                    <Label Text="{Binding Title}" Padding="10" FontAttributes="Bold" LineBreakMode="TailTruncation"/>
+                                    <Label Text="{Binding Description}" Padding="10" FontSize="12" LineBreakMode="TailTruncation"/>
+                                    <Label Text="{Binding Participant.FullName}" Padding="10" FontSize="10" TextColor="Gray"/>
+                                </StackLayout>
+                            </HorizontalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+    
+</ContentPage>

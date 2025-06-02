@@ -1,0 +1,33 @@
+﻿
+Hello!
+
+This text file includes instructions for you to hopefully make grading a bit easier :)
+One feature I would like for you to see are the cards that display the art objects.
+To do this you must...
+
+	1) Use the included images
+		- I attached 4 images in the 'Instructions_pls_read' folder
+		- You don't have to upload them all, but if you'd like to see how it looks with various 
+		  images you can
+
+	2) Download the images
+		- Save them to the local machine that you're using to grade
+
+	3) Create a gallery 
+		- Set its start time to maybe 4-6 minutes after creation to give yourself enough time to 
+		  upload the photos
+
+	3) Upload the images 
+		- Select the gallery in the Upcoming section
+		- Click 'Upload Art'
+		- Use the 'Pick Image' button to upload each of the images
+		- The images cannot be viewed until the gallery is ongoing
+		** Art can only be uploaded to a gallery that is upcoming **
+
+	4) View the uploaded images
+		- Once the gallery start time has passed, it'll move to the Ongoing section
+		- Go to the ongoing section, select your gallery, and you should see the art
+		  object cards with the images you uploaded!
+
+
+		  

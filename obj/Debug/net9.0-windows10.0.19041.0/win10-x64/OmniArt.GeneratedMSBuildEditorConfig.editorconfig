@@ -1,0 +1,94 @@
+is_global = true
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property._MvvmToolkitIsUsingWindowsRuntimePack = true
+build_property.CsWinRTComponent = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotWarningLevel = 
+build_property.CsWinRTAotWarningLevel = 
+build_property.TargetFramework = net9.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = OmniArt
+build_property.ProjectDir = C:\Users\cmora\source\repos\OmniArt\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTAotExportsEnabled = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
+build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
+build_property.CsWinRTMergeReferencedActivationFactories = 
+build_property.CsWinRTUseWindowsUIXamlProjections = false
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/cmora/source/repos/OmniArt/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Views/FullViewImagePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Views.FullViewImagePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\FullViewImagePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\FullViewImagePage.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Views/GalleryDetailPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Views.GalleryDetailPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\GalleryDetailPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\GalleryDetailPage.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Views/GalleryFormPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Views.GalleryFormPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\GalleryFormPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\GalleryFormPage.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Views/OngoingGalleriesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Views.OngoingGalleriesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\OngoingGalleriesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\OngoingGalleriesPage.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Views/PreviousGalleriesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Views.PreviousGalleriesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\PreviousGalleriesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\PreviousGalleriesPage.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Views/UpcomingGalleriesPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Views.UpcomingGalleriesPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UpcomingGalleriesPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UpcomingGalleriesPage.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Views/UploadArtPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Views.UploadArtPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\UploadArtPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\UploadArtPage.xaml
+
+[C:/Users/cmora/source/repos/OmniArt/Views/WelcomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = OmniArt.Views.WelcomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\WelcomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\WelcomePage.xaml
