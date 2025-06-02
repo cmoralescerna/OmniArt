@@ -5,10 +5,48 @@
              Title="Gallery Details"
              x:Name="GalleryDetails">
     
-    <ScrollView Padding="20">
+    <ScrollView Padding="20,80,20,20">
         <VerticalStackLayout Spacing="10">
             
             <!-- Gallery Info -->
+            <Frame BackgroundColor="#1AC2CCCA"
+                   CornerRadius="12"
+                   Padding="20"
+                   HasShadow="True"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   WidthRequest="350">
+                
+                <VerticalStackLayout Spacing="12"
+                                     HorizontalOptions="Center"
+                                     VerticalOptions="Center">
+                    <Label Text="{Binding Title}"
+                           FontSize="24"
+                           FontAttributes="Bold"
+                           TextColor="#c3b0f5"/>
+                    <Label Text="{Binding Description}"
+                           FontSize="16"
+                           TextColor="#ffffff"/>
+
+                    <Grid ColumnDefinitions="Auto, *" RowDefinitions="Auto,Auto,Auto,Auto" RowSpacing="6" ColumnSpacing="10">
+                        <Label Text="Date:" FontAttributes="Bold" TextColor="#b1c5c7"/>
+                        <Label Text="{Binding Date, StringFormat='{0:MMMM dd, yyyy}'}" Grid.Column="1"/>
+
+                        <Label Text="Start Time:" FontAttributes="Bold" TextColor="#b1c5c7" Grid.Row="1"/>
+                        <Label Text="{Binding StartTime, StringFormat='{0:hh\\:mm}'}"  Grid.Column="1" Grid.Row="1"/>
+
+                        <Label Text="End Time:" FontAttributes="Bold" TextColor="#b1c5c7" Grid.Row="2"/>
+                        <Label Text="{Binding EndTime, StringFormat='{0:hh\\:mm}'}"  Grid.Column="1" Grid.Row="2"/>
+
+                        <Label Text="Host Name:" FontAttributes="Bold" TextColor="#b1c5c7" Grid.Row="3"/>
+                        <Label Text="{Binding HostFullName}"  Grid.Column="1" Grid.Row="3"/>
+                    </Grid>
+
+
+                </VerticalStackLayout>
+            </Frame>
+               
+            <!-- Old Gallery Info
             <Label Text="{Binding Title}" FontSize="24" FontAttributes="Bold"/>
             <Label Text="{Binding Description}" FontSize="16"/>
 
@@ -23,27 +61,53 @@
 
             <Label Text="Host Name:" FontAttributes="Bold"/>
             <Label Text="{Binding HostFullName}"/>
+            -->
+            <HorizontalStackLayout Spacing="15"
+                                   HorizontalOptions="Center"
+                                   Margin="0,20,0,0">
+                <Button Text="Upload Art"
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"
+                        IsVisible="{Binding IsUpcoming}"
+                        Command="{Binding UploadArtCommand}"/>
+
+                <Button Text="Delete Art" 
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"
+                        IsVisible="{Binding IsUpcoming}"
+                        Command="{Binding DeleteArtCommand}"/>
+
+                <Button Text="Edit Art" 
+                        HorizontalOptions="Center"
+                        Margin="0,20,0,0"
+                        IsVisible="{Binding IsUpcoming}"
+                        Command="{Binding EditArtCommand}"/>
+
+            </HorizontalStackLayout>
+            
 
             <!-- Upload Art Button -->
+            <!-- Before editing Buttons
             <Button Text="Upload Art"
                     HorizontalOptions="Center"
                     Margin="0,20,0,0"
                     IsVisible="{Binding IsUpcoming}"
                     Command="{Binding UploadArtCommand}"/>
             
-            <!-- Delete Art Button -->
+            Delete Art Button
             <Button Text="Delete Art" 
                     HorizontalOptions="Center"
                     Margin="0,20,0,0"
                     IsVisible="{Binding IsUpcoming}"
                     Command="{Binding DeleteArtCommand}"/>
 
-            <!-- Edit Art Button -->
+            Edit Art Button
             <Button Text="Edit Art" 
                     HorizontalOptions="Center"
                     Margin="0,20,0,0"
                     IsVisible="{Binding IsUpcoming}"
-                    Command="{Binding EditArtCommand}"/>
+                    Command="{Binding EditArtCommand}"/> -->
+            
             
             <!-- Art Gallery Grid -->
             <CollectionView ItemsSource="{Binding ArtPieces}"
