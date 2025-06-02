@@ -217,8 +217,5 @@ namespace OmniArt.ViewModels
                 Host.LastName = gallery.Host.LastName;
             }
         }
-
-
-
     }
 }

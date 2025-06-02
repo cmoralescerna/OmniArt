@@ -63,6 +63,7 @@ public partial class UpcomingGalleriesPage : ContentPage
 				if (confirm)
 				{
 					await galleriesViewModel.DeleteGalleryAsync(gallery);
+				
 				} else
 				{
 					return;

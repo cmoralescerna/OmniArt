@@ -54,7 +54,5 @@ namespace OmniArt.ViewModels
             FirstName = this.FirstName,
             LastName = this.LastName
         };
-
-
     }
 }

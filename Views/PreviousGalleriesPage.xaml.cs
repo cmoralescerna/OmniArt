@@ -28,13 +28,6 @@ public partial class PreviousGalleriesPage : ContentPage
         await Navigation.PushAsync(new GalleryDetailPage(selectedGallery));
     }
 
-    // Loads the current galleries
-    protected override async void OnAppearing()
-    {
-        base.OnAppearing();
-        await galleriesViewModel.LoadAsync();
-    }
-
     private async void OnOptionsClicked(object sender, EventArgs e)
     {
         if (sender is ImageButton button && button.BindingContext is Gallery gallery)
@@ -48,7 +41,7 @@ public partial class PreviousGalleriesPage : ContentPage
 
             if (action == "Edit")
             {
-
+                await Navigation.PushAsync(new GalleryFormPage(gallery));
             }
             else if (action == "Delete")
             {
@@ -67,5 +60,12 @@ public partial class PreviousGalleriesPage : ContentPage
                 }
             }
         }   
+    }
+
+    // Loads the current galleries
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        await galleriesViewModel.LoadAsync();
     }
 }

@@ -14,8 +14,8 @@
                 <DataTemplate>
                     <Grid Padding="10" HeightRequest="100" Margin="5" ColumnDefinitions="*, Auto">
                         <VerticalStackLayout Grid.Column="0" VerticalOptions="Center">
-                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="15"/>
-                            <Label Text="{Binding Description}" FontSize="14"/>
+                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="18"/>
+                            <Label Text="{Binding Description}" FontSize="15"/>
                         </VerticalStackLayout>
 
                         <ImageButton

@@ -18,7 +18,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("OmniArt")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+32d3067fa1266c6979f173ed8384bf2c71cbb0ce")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+281d7a999416d4ede5ad3afac2d583d4f5526efe")]
 [assembly: System.Reflection.AssemblyProductAttribute("OmniArt")]
 [assembly: System.Reflection.AssemblyTitleAttribute("OmniArt")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

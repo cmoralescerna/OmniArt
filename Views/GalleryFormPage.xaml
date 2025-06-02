@@ -16,7 +16,7 @@
             <Entry Placeholder="Host First Name" Text="{Binding Host.FirstName}"/>
             <Entry Placeholder="Host Last Name" Text="{Binding Host.LastName}"/>
 
-            <Button Text="Create" Command="{Binding CreateGalleryCommand}"/>
+            <Button Text="Save" Command="{Binding CreateGalleryCommand}"/>
         </VerticalStackLayout>
     </ScrollView>
     
