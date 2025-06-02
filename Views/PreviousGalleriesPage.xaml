@@ -13,7 +13,7 @@
                 <DataTemplate>
                     <Grid Padding="10" HeightRequest="100" ColumnDefinitions="*, Auto">
                         <VerticalStackLayout Padding="10" HeightRequest="100" Margin="5">
-                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="15"/>
+                            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="18"/>
                             <Label Text="{Binding Description}" FontSize="14"/>
                         </VerticalStackLayout>
 

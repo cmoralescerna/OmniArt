@@ -48,7 +48,7 @@ public partial class OngoingGalleriesPage : ContentPage
 
             if (action == "Edit")
             {
-
+                await Navigation.PushAsync(new GalleryFormPage(gallery));
             }
             else if (action == "Delete")
             {

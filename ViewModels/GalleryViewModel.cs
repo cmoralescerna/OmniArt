@@ -7,7 +7,6 @@ using System.Windows.Input;
 using System.Collections.ObjectModel;
 using OmniArt.Models;
 using OmniArt.Views;
-
 namespace OmniArt.ViewModels
 {
     /// <summary>
@@ -90,3 +89,4 @@ namespace OmniArt.ViewModels
         }
     }
 }
+

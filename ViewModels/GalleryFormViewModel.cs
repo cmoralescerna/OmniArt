@@ -81,8 +81,18 @@ namespace OmniArt.ViewModels
                 this.endTime = value; 
                 OnPropertyChanged(); 
             }
-        } 
-        
+        }
+
+        public bool IsEditable
+        {
+            get { return editingGallery == null || editingGallery.Status == GalleryStatus.Upcoming; }
+        }
+
+        public bool IsTimeEditable
+        {
+            get { return editingGallery != null && editingGallery.Status == GalleryStatus.Upcoming; }
+        }
+
         public GalleryFormViewModel(GalleryService galleryService)
         {
             this.galleryService = galleryService;
@@ -99,7 +109,7 @@ namespace OmniArt.ViewModels
         {
             try
             {
-                if (await ValidateFields() || await ValidateTime())
+                if (await ValidateFields() || await ValidateDate() || await ValidateTime())
                 {
                     return;
                 }
@@ -121,7 +131,7 @@ namespace OmniArt.ViewModels
                     };
 
                     await galleryService.CreateGalleryAsync(newGallery);
-                    await Application.Current.MainPage.DisplayAlert("Success", "Gallery created", "OK");
+                    await ShowSuccess("Gallery created");
 
                 } else
                 {
@@ -134,7 +144,7 @@ namespace OmniArt.ViewModels
                     editingGallery.Host.LastName = Host.LastName;
 
                     await galleryService.EditGalleryAsync(editingGallery);
-                    await Application.Current.MainPage.DisplayAlert("Success", "Gallery updated", "OK");
+                    await ShowSuccess("Gallery updated"); 
 
                     editingGallery = null; // reset
                 }
@@ -167,7 +177,7 @@ namespace OmniArt.ViewModels
                     (string.IsNullOrWhiteSpace(Host.FirstName)) ||
                     (string.IsNullOrWhiteSpace(Host.LastName)))
             {
-                await Application.Current.MainPage.DisplayAlert("Error!", "Fields cannot be missing", "OK");
+                await ShowError("Fields cannot be missing");
                 error = true;
             }
 
@@ -176,24 +186,62 @@ namespace OmniArt.ViewModels
 
         public async Task<bool> ValidateTime()
         {
-            bool error = false;
-
             DateTime fullStart = Date.Date + StartTime;
             DateTime fullEnd = Date.Date + EndTime;
 
+            // Basic time logic validation
             if (fullEnd <= fullStart)
             {
-                await Application.Current.MainPage.DisplayAlert("Error!", "The gallery cannot end before it starts!", "OK");
-                error = true;
+                await ShowError("The gallery cannot end before it starts!");
+                return true;
 
-            } else if (fullStart < DateTime.Now) 
-            {
-                await Application.Current.MainPage.DisplayAlert("Error!", "The gallery cannot start in the past!", "OK");
-                error = true;
             }
 
+            // Validation for when creating a new gallery
+            if (editingGallery == null)
+            {
+                if (fullStart < DateTime.Now)
+                {
+                    await ShowError("The gallery cannot start in the past!");
+                    return true;
+                }
+                return false;
+            }
 
-            return error;
+            // Editing an existing gallery
+            bool timeChanged = editingGallery.StartTime != fullStart || editingGallery.EndTime != fullEnd;
+
+            if (editingGallery.Status == GalleryStatus.Upcoming)
+            {
+                if (fullStart < DateTime.Now)
+                {
+                    await ShowError("The gallery cannot start in the past!");
+                    return true;
+                }
+
+                return false;
+            }
+
+            // For ongoing and previous galleries
+            if (timeChanged)
+            {
+                await ShowError("Time editing is not permitted for galleries that are ongoing or complete!");
+                return true;
+            }
+
+            return false;
+        }
+
+        public async Task<bool> ValidateDate()
+        {
+
+            if (editingGallery != null && editingGallery.Date.Date != Date.Date && editingGallery.Status != GalleryStatus.Upcoming)
+            {
+                await ShowError("Date editing is not permitted for galleries that are ongoing or complete!");
+                return true;
+            }
+
+            return false;
         }
 
         public void LoadGalleryForEdit(Gallery gallery)
@@ -216,6 +264,16 @@ namespace OmniArt.ViewModels
                 Host.FirstName = gallery.Host.FirstName;
                 Host.LastName = gallery.Host.LastName;
             }
+        }
+
+        private async Task ShowError(string message)
+        {
+            await Application.Current.MainPage.DisplayAlert("Error!", message, "OK");
+        }
+
+        private async Task ShowSuccess(string message)
+        {
+            await Application.Current.MainPage.DisplayAlert("Success!", message, "OK");
         }
     }
 }
