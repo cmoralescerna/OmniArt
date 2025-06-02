@@ -83,16 +83,6 @@ namespace OmniArt.ViewModels
             }
         }
 
-        public bool IsEditable
-        {
-            get { return editingGallery == null || editingGallery.Status == GalleryStatus.Upcoming; }
-        }
-
-        public bool IsTimeEditable
-        {
-            get { return editingGallery != null && editingGallery.Status == GalleryStatus.Upcoming; }
-        }
-
         public GalleryFormViewModel(GalleryService galleryService)
         {
             this.galleryService = galleryService;
