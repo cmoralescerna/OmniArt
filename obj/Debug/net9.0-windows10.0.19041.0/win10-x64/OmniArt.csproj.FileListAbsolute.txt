@@ -498,3 +498,4 @@ C:\Users\cmora\source\repos\OmniArt\bin\Debug\net9.0-windows10.0.19041.0\win10-x
 C:\Users\cmora\source\repos\OmniArt\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
 C:\Users\cmora\source\repos\OmniArt\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\gallery_menu.scale-100.png
 C:\Users\cmora\source\repos\OmniArt\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\gallery_menu.scale-100.png
+C:\Users\cmora\source\repos\OmniArt\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\OmniArt.sourcelink.json

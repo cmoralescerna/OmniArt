@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace OmniArt.Models
 {
-    public class Gallery
+    public class Gallery : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private string title;
         private string description;
         private DateTime date;
@@ -35,6 +38,7 @@ namespace OmniArt.Models
                 if (!string.IsNullOrWhiteSpace(value))
                 {
                     title = value;
+                    OnPropertyChanged(nameof(Title));
 
                 } else
                 {
@@ -53,6 +57,7 @@ namespace OmniArt.Models
                 if (!string.IsNullOrWhiteSpace(value))
                 {
                     description = value;
+                    OnPropertyChanged(nameof(Description));
 
                 } else
                 {
@@ -69,6 +74,7 @@ namespace OmniArt.Models
             set
             {
                 date = value;
+                OnPropertyChanged(nameof(Date));
             }
         }
 
@@ -76,14 +82,14 @@ namespace OmniArt.Models
         {
             get { return startTime; }
 
-            set { startTime = value; }
+            set { startTime = value; OnPropertyChanged(nameof(StartTime)); }
         }
 
         public DateTime EndTime // User enters time for when they want the gallery to end
         {
             get { return endTime; }
 
-            set { endTime = value; }
+            set { endTime = value; OnPropertyChanged(nameof(EndTime)); }
         }
 
         public string GalleryId { get; set; } = Guid.NewGuid().ToString();
@@ -116,6 +122,11 @@ namespace OmniArt.Models
         public bool CanAddArt()
         {
             return Status == GalleryStatus.Upcoming;
+        }
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

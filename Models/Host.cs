@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace OmniArt.Models
 {
-    public class Host
+    public class Host : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         //private string hostId;
         private string firstName;
         private string lastName;
@@ -27,6 +31,7 @@ namespace OmniArt.Models
                 if (!string.IsNullOrWhiteSpace(value))
                 {
                     firstName = value;
+                    OnPropertyChanged(nameof(FirstName));
 
                 } else
                 {
@@ -44,6 +49,7 @@ namespace OmniArt.Models
                 if (!string.IsNullOrWhiteSpace(value))
                 {
                     lastName = value;
+                    OnPropertyChanged(nameof(LastName));
 
                 } else
                 {
@@ -71,6 +77,11 @@ namespace OmniArt.Models
         }
 
         public string HostId { get; set; } = Guid.NewGuid().ToString();
+
+        public void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
 
     }
 }
